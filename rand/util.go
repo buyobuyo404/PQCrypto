@@ -30,7 +30,7 @@ var smallPrimesProduct = new(big.Int).SetUint64(16294579238595022365)
 // Prime will return error for any error returned by rand.Read or if bits < 2.
 func Prime(rand io.Reader, bits int) (p *big.Int, err error) {
 	if bits < 2 {
-		err = errors.New("github.com/mercury/mercurycrypto/rand: prime size must be at least 2-bit")
+		err = errors.New("github.com/mercury/mercuryPQCrypto/rand: prime size must be at least 2-bit")
 		return
 	}
 
@@ -105,7 +105,7 @@ func Prime(rand io.Reader, bits int) (p *big.Int, err error) {
 // Int returns a uniform random value in [0, max). It panics if max <= 0.
 func Int(rand io.Reader, max *big.Int) (n *big.Int, err error) {
 	if max.Sign() <= 0 {
-		panic("github.com/mercury/mercurycrypto/rand: argument to Int is <= 0")
+		panic("github.com/mercury/mercuryPQCrypto/rand: argument to Int is <= 0")
 	}
 	n = new(big.Int)
 	n.Sub(max, n.SetUint64(1))

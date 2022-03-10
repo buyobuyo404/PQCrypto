@@ -5,8 +5,8 @@
 package sha1
 
 import (
-	//"github.com/mercury/mercurycrypto/internal/cpu"
-	"github.com/mercury/mercurycrypto/internal/cpu"
+	//"github.com/mercury/mercuryPQCrypto/internal/cpu"
+	"github.com/mercury/mercuryPQCrypto/internal/cpu"
 )
 
 var k = []uint32{

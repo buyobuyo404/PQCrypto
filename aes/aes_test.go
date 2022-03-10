@@ -324,12 +324,12 @@ func TestShortBlocks(t *testing.T) {
 
 	c, _ := NewCipher(bytes(16))
 
-	mustPanic(t, "github.com/mercury/mercurycrypto/aes: input not full block", func() { c.Encrypt(bytes(1), bytes(1)) })
-	mustPanic(t, "github.com/mercury/mercurycrypto/aes: input not full block", func() { c.Decrypt(bytes(1), bytes(1)) })
-	mustPanic(t, "github.com/mercury/mercurycrypto/aes: input not full block", func() { c.Encrypt(bytes(100), bytes(1)) })
-	mustPanic(t, "github.com/mercury/mercurycrypto/aes: input not full block", func() { c.Decrypt(bytes(100), bytes(1)) })
-	mustPanic(t, "github.com/mercury/mercurycrypto/aes: output not full block", func() { c.Encrypt(bytes(1), bytes(100)) })
-	mustPanic(t, "github.com/mercury/mercurycrypto/aes: output not full block", func() { c.Decrypt(bytes(1), bytes(100)) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/aes: input not full block", func() { c.Encrypt(bytes(1), bytes(1)) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/aes: input not full block", func() { c.Decrypt(bytes(1), bytes(1)) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/aes: input not full block", func() { c.Encrypt(bytes(100), bytes(1)) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/aes: input not full block", func() { c.Decrypt(bytes(100), bytes(1)) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/aes: output not full block", func() { c.Encrypt(bytes(1), bytes(100)) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/aes: output not full block", func() { c.Decrypt(bytes(1), bytes(100)) })
 }
 
 func mustPanic(t *testing.T, msg string, f func()) {

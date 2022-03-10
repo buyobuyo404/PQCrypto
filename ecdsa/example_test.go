@@ -5,11 +5,11 @@
 package ecdsa_test
 
 import (
-	"github.com/mercury/mercurycrypto/ecdsa"
-	"github.com/mercury/mercurycrypto/elliptic"
-	"github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/sha256"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/ecdsa"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/sha256"
 )
 
 func Example() {

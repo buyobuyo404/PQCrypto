@@ -4,27 +4,27 @@ import (
 	"encoding/asn1"
 	"encoding/pem"
 	"fmt"
-	dilithium5AES "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium5AES"
+	dilithium5AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium5AES"
 
-	//dilithium3AES "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium3AES"
+	//dilithium3AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium3AES"
 
-	//"github.com/mercury/mercurycrypto/pqc/falcon/falcon1024"
+	//"github.com/mercury/mercuryPQCrypto/pqc/falcon/falcon1024"
 
-	falcon512 "github.com/mercury/mercurycrypto/pqc/falcon/falcon512"
+	falcon512 "github.com/mercury/mercuryPQCrypto/pqc/falcon/falcon512"
 
-	//dilithium2 "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium2"
-	//rainbowICircumzenithal "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowICircumzenithal"
-	//rainbowIClassic "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIClassic"
-	//rainbowICompressed "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowICompressed"
-	//rainbowIIICircumzenithal "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIIICircumzenithal"
-	//rainbowIIIClassic "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIIIClassic"
-	//rainbowIIICompressed "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIIICompressed"
-	//rainbowVCircumzenithal "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowVCircumzenithal"
-	//rainbowVClassic "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowVClassic"
-	//rainbowVCompressed "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowVCompressed"
+	//dilithium2 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium2"
+	//rainbowICircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowICircumzenithal"
+	//rainbowIClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIClassic"
+	//rainbowICompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowICompressed"
+	//rainbowIIICircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICircumzenithal"
+	//rainbowIIIClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIIClassic"
+	//rainbowIIICompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICompressed"
+	//rainbowVCircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVCircumzenithal"
+	//rainbowVClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVClassic"
+	//rainbowVCompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVCompressed"
 
-	"github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/x509/pkix"
+	"github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/x509/pkix"
 	"math/big"
 	"net"
 	"net/url"
@@ -330,7 +330,7 @@ func TestMarshalPKCS8PrivateKeyPQC(t *testing.T) {
 	fmt.Println("priv2: ", priv2)
 
 	msg := []byte("This is the message to sign")
-	sign, _:= priv.SignPQC(msg)
+	sign, _ := priv.SignPQC(msg)
 	isValid := priv.PublicKey.Verify(msg, sign)
 	fmt.Println("res: ", isValid)
 }
@@ -374,12 +374,12 @@ func TestMarshalPKCS8PrivateKeyFunctionPQC(t *testing.T) {
 	skBytes := priv2.PrivateKey
 	if len(pkBytes) != falcon512.PublicKeySize || len(skBytes) != falcon512.PrivateKeySize {
 		fmt.Println("秘钥长度错误")
-		fmt.Println(len(pkBytes), " => ",falcon512.PublicKeySize)
-		fmt.Println(len(skBytes), " => ",falcon512.PrivateKeySize)
+		fmt.Println(len(pkBytes), " => ", falcon512.PublicKeySize)
+		fmt.Println(len(skBytes), " => ", falcon512.PrivateKeySize)
 	}
 	//pk := falcon512.PublicKey{Pk: pkBytes}
 	final := falcon512.PrivateKey{
-		Sk: skBytes,
+		Sk:        skBytes,
 		PublicKey: falcon512.PublicKey{Pk: pkBytes},
 	}
 	fmt.Println(final)

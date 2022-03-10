@@ -5,8 +5,8 @@
 package tls
 
 import (
-	"github.com/mercury/mercurycrypto/elliptic"
-	"github.com/mercury/mercurycrypto/hmac"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto/hmac"
 	"errors"
 	"hash"
 	"io"

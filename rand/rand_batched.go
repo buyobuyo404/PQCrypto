@@ -2,12 +2,13 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build linux || freebsd
 // +build linux freebsd
 
 package rand
 
 import (
-	"github.com/mercury/mercurycrypto/internal/syscall/unix"
+	"github.com/mercury/mercuryPQCrypto/internal/syscall/unix"
 )
 
 // maxGetRandomRead is platform dependent.

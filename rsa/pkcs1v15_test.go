@@ -6,11 +6,11 @@ package rsa
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/sha1"
 	"encoding/base64"
 	"encoding/hex"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/sha1"
 	"io"
 	"math/big"
 	"testing"

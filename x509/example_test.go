@@ -5,11 +5,11 @@
 package x509_test
 
 import (
-	"github.com/mercury/mercurycrypto/dsa"
-	"github.com/mercury/mercurycrypto/ecdsa"
-	"github.com/mercury/mercurycrypto/ed25519"
-	"github.com/mercury/mercurycrypto/rsa"
-	"github.com/mercury/mercurycrypto/x509"
+	"github.com/mercury/mercuryPQCrypto/dsa"
+	"github.com/mercury/mercuryPQCrypto/ecdsa"
+	"github.com/mercury/mercuryPQCrypto/ed25519"
+	"github.com/mercury/mercuryPQCrypto/rsa"
+	"github.com/mercury/mercuryPQCrypto/x509"
 	"encoding/pem"
 	"fmt"
 )

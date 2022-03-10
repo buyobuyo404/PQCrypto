@@ -9,10 +9,10 @@ package x509
 // implementation.
 
 import (
-	"github.com/mercury/mercurycrypto/aes"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/des"
-	"github.com/mercury/mercurycrypto/md5"
+	"github.com/mercury/mercuryPQCrypto/aes"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/des"
+	"github.com/mercury/mercuryPQCrypto/md5"
 	"encoding/hex"
 	"encoding/pem"
 	"errors"

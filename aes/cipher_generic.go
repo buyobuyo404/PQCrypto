@@ -2,12 +2,13 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build !amd64 && !s390x && !ppc64le && !arm64
 // +build !amd64,!s390x,!ppc64le,!arm64
 
 package aes
 
 import (
-	"github.com/mercury/mercurycrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/cipher"
 )
 
 // newCipher calls the newCipherGeneric function

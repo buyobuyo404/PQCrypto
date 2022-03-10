@@ -5,13 +5,13 @@
 package rsa
 
 import (
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/aes"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/sha256"
 	"encoding/hex"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/aes"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/sha256"
 	"io"
 	"os"
 )

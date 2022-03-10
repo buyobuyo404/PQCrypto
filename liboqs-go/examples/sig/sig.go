@@ -3,7 +3,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/mercury/mercurycrypto/liboqs-go/oqs"
+	"github.com/mercury/mercuryPQCrypto/liboqs-go/oqs"
 	"log"
 )
 

@@ -5,7 +5,7 @@
 package rand
 
 import (
-	"github.com/mercury/mercurycrypto/syscall/unix"
+	"github.com/mercury/mercuryPQCrypto/syscall/unix"
 )
 
 func init() {

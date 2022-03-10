@@ -25,5 +25,5 @@ func Read(b []byte) (n int, err error) {
 }
 
 func warnBlocked() {
-	println("github.com/mercury/mercurycrypto/rand: blocked for 60 seconds waiting to read random data from the kernel")
+	println("github.com/mercury/mercuryPQCrypto/rand: blocked for 60 seconds waiting to read random data from the kernel")
 }

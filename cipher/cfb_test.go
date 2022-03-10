@@ -6,10 +6,10 @@ package cipher_test
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/aes"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/rand"
 	"encoding/hex"
+	"github.com/mercury/mercuryPQCrypto/aes"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"testing"
 )
 

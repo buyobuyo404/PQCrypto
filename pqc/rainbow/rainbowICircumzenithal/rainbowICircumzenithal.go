@@ -2,8 +2,8 @@ package pqc
 
 import (
 	"fmt"
-	crypto "github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/liboqs-go/oqs"
+	crypto "github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/liboqs-go/oqs"
 	"io"
 	"log"
 )

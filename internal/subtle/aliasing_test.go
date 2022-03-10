@@ -7,7 +7,7 @@ package subtle_test
 import (
 	"testing"
 
-	"github.com/mercury/mercurycrypto/internal/subtle"
+	"github.com/mercury/mercuryPQCrypto/internal/subtle"
 )
 
 var a, b [100]byte

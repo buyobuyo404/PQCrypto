@@ -2,17 +2,18 @@ package dilithium2
 
 import (
 	"fmt"
-	crypto "github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/liboqs-go/oqs"
+	crypto "github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/liboqs-go/oqs"
 	"io"
 	"log"
 )
 
 var signer = oqs.Signature{}
 var verifier = oqs.Signature{}
+
 const (
-	sigName = "Dilithium5-AES"
-	PublicKeySize = 2592
+	sigName        = "Dilithium5-AES"
+	PublicKeySize  = 2592
 	PrivateKeySize = 4864
 )
 

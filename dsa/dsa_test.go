@@ -5,7 +5,7 @@
 package dsa
 
 import (
-	"github.com/mercury/mercurycrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"math/big"
 	"testing"
 )

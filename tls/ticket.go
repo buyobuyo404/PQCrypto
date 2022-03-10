@@ -6,11 +6,11 @@ package tls
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/aes"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/hmac"
-	"github.com/mercury/mercurycrypto/sha256"
-	"github.com/mercury/mercurycrypto/subtle"
+	"github.com/mercury/mercuryPQCrypto/aes"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/hmac"
+	"github.com/mercury/mercuryPQCrypto/sha256"
+	"github.com/mercury/mercuryPQCrypto/subtle"
 	"errors"
 	"golang.org/x/crypto/cryptobyte"
 	"io"

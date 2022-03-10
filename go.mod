@@ -1,4 +1,4 @@
-module github.com/mercury/mercurycrypto
+module github.com/mercury/mercuryPQCrypto
 
 go 1.14
 

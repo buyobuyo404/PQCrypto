@@ -6,14 +6,14 @@ package tls
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/ecdsa"
-	"github.com/mercury/mercurycrypto/ed25519"
-	"github.com/mercury/mercurycrypto/elliptic"
-	"github.com/mercury/mercurycrypto/rsa"
 	"encoding/asn1"
 	"errors"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/ecdsa"
+	"github.com/mercury/mercuryPQCrypto/ed25519"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto/rsa"
 	"hash"
 	"io"
 )
@@ -63,7 +63,7 @@ func verifyHandshakeSignature(sigType uint8, pubkey crypto.PublicKey, hashFunc c
 			return err
 		}
 	default:
-		return errors.New("github.com/mercury/mercurycrypto error: unknown signature type")
+		return errors.New("github.com/mercury/mercuryPQCrypto error: unknown signature type")
 	}
 	return nil
 }

@@ -1,10 +1,10 @@
 package sm4
 
 import (
-	"github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/x509"
 	"encoding/pem"
 	"errors"
+	"github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/x509"
 	"io/ioutil"
 )
 

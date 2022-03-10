@@ -11,7 +11,7 @@
 
 package cipher
 
-import "github.com/mercury/mercurycrypto/internal/subtle"
+import "github.com/mercury/mercuryPQCrypto/internal/subtle"
 
 type cbc struct {
 	b         Block
@@ -56,13 +56,13 @@ func (x *cbcEncrypter) BlockSize() int { return x.blockSize }
 
 func (x *cbcEncrypter) CryptBlocks(dst, src []byte) {
 	if len(src)%x.blockSize != 0 {
-		panic("github.com/mercury/mercurycrypto/cipher: input not full blocks")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: input not full blocks")
 	}
 	if len(dst) < len(src) {
-		panic("github.com/mercury/mercurycrypto/cipher: output smaller than input")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: output smaller than input")
 	}
 	if subtle.InexactOverlap(dst[:len(src)], src) {
-		panic("github.com/mercury/mercurycrypto/cipher: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: invalid buffer overlap")
 	}
 
 	iv := x.iv
@@ -116,13 +116,13 @@ func (x *cbcDecrypter) BlockSize() int { return x.blockSize }
 
 func (x *cbcDecrypter) CryptBlocks(dst, src []byte) {
 	if len(src)%x.blockSize != 0 {
-		panic("github.com/mercury/mercurycrypto/cipher: input not full blocks")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: input not full blocks")
 	}
 	if len(dst) < len(src) {
-		panic("github.com/mercury/mercurycrypto/cipher: output smaller than input")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: output smaller than input")
 	}
 	if subtle.InexactOverlap(dst[:len(src)], src) {
-		panic("github.com/mercury/mercurycrypto/cipher: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: invalid buffer overlap")
 	}
 	if len(src) == 0 {
 		return

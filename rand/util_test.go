@@ -6,8 +6,8 @@ package rand_test
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/rand"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"io"
 	"math/big"
 	mathrand "math/rand"

@@ -5,9 +5,9 @@
 package elliptic
 
 import (
-	"github.com/mercury/mercurycrypto/rand"
 	"encoding/hex"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"math/big"
 	"testing"
 )

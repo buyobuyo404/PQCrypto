@@ -5,8 +5,8 @@
 package aes
 
 import (
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/internal/subtle"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/internal/subtle"
 	"strconv"
 )
 
@@ -22,7 +22,7 @@ type aesCipher struct {
 type KeySizeError int
 
 func (k KeySizeError) Error() string {
-	return "github.com/mercury/mercurycrypto/aes: invalid key size " + strconv.Itoa(int(k))
+	return "github.com/mercury/mercuryPQCrypto/aes: invalid key size " + strconv.Itoa(int(k))
 }
 
 // NewCipher creates and returns a new cipher.Block.
@@ -53,26 +53,26 @@ func (c *aesCipher) BlockSize() int { return BlockSize }
 
 func (c *aesCipher) Encrypt(dst, src []byte) {
 	if len(src) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/aes: input not full block")
+		panic("github.com/mercury/mercuryPQCrypto/aes: input not full block")
 	}
 	if len(dst) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/aes: output not full block")
+		panic("github.com/mercury/mercuryPQCrypto/aes: output not full block")
 	}
 	if subtle.InexactOverlap(dst[:BlockSize], src[:BlockSize]) {
-		panic("github.com/mercury/mercurycrypto/aes: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/aes: invalid buffer overlap")
 	}
 	encryptBlockGo(c.enc, dst, src)
 }
 
 func (c *aesCipher) Decrypt(dst, src []byte) {
 	if len(src) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/aes: input not full block")
+		panic("github.com/mercury/mercuryPQCrypto/aes: input not full block")
 	}
 	if len(dst) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/aes: output not full block")
+		panic("github.com/mercury/mercuryPQCrypto/aes: output not full block")
 	}
 	if subtle.InexactOverlap(dst[:BlockSize], src[:BlockSize]) {
-		panic("github.com/mercury/mercurycrypto/aes: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/aes: invalid buffer overlap")
 	}
 	decryptBlockGo(c.dec, dst, src)
 }

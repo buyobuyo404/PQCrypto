@@ -55,7 +55,7 @@ func (s *CertPool) copy() *CertPool {
 func SystemCertPool() (*CertPool, error) {
 	if runtime.GOOS == "windows" {
 		// Issue 16736, 18609:
-		return nil, errors.New("github.com/mercury/mercurycrypto/x509: system root pool is not available on Windows")
+		return nil, errors.New("github.com/mercury/mercuryPQCrypto/x509: system root pool is not available on Windows")
 	}
 
 	if sysRoots := systemRootsPool(); sysRoots != nil {

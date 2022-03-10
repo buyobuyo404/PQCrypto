@@ -5,9 +5,9 @@
 package crypto
 
 import (
-	"github.com/mercury/mercurycrypto/aes"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/rc4"
+	"github.com/mercury/mercuryPQCrypto/aes"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/rc4"
 	"testing"
 )
 

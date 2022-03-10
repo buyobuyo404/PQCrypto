@@ -8,11 +8,11 @@ package tls
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/subtle"
-	"github.com/mercury/mercurycrypto/x509"
 	"errors"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/subtle"
+	"github.com/mercury/mercuryPQCrypto/x509"
 	"io"
 	"net"
 	"sync"

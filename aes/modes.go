@@ -5,7 +5,7 @@
 package aes
 
 import (
-	"github.com/mercury/mercurycrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/cipher"
 )
 
 // gcmAble is implemented by cipher.Blocks that can provide an optimized

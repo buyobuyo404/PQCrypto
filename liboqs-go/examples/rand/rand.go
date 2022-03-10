@@ -6,7 +6,7 @@ import (
 	"log"
 	"runtime"
 
-	oqsrand "github.com/mercury/mercurycrypto/liboqs-go/oqs/rand" // RNG support
+	oqsrand "github.com/mercury/mercuryPQCrypto/liboqs-go/oqs/rand" // RNG support
 )
 
 // CustomRNG provides a (trivial) custom random number generator; the memory is

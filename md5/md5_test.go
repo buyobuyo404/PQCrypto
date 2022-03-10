@@ -6,9 +6,9 @@ package md5
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/rand"
 	"encoding"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"hash"
 	"io"
 	"testing"

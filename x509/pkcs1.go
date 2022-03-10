@@ -5,9 +5,9 @@
 package x509
 
 import (
-	"github.com/mercury/mercurycrypto/rsa"
 	"encoding/asn1"
 	"errors"
+	"github.com/mercury/mercuryPQCrypto/rsa"
 	"math/big"
 )
 

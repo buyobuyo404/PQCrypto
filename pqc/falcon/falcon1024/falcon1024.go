@@ -2,17 +2,18 @@ package falcon512
 
 import (
 	"fmt"
-	crypto "github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/liboqs-go/oqs"
+	crypto "github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/liboqs-go/oqs"
 	"io"
 	"log"
 )
 
 var signer = oqs.Signature{}
 var verifier = oqs.Signature{}
+
 const (
-	sigName = "Falcon-1024"
-	PublicKeySize = 1793
+	sigName        = "Falcon-1024"
+	PublicKeySize  = 1793
 	PrivateKeySize = 2305
 )
 

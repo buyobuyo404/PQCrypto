@@ -6,12 +6,12 @@ package tls
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/ecdsa"
-	"github.com/mercury/mercurycrypto/ed25519"
-	"github.com/mercury/mercurycrypto/rsa"
-	"github.com/mercury/mercurycrypto/subtle"
-	"github.com/mercury/mercurycrypto/x509"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/ecdsa"
+	"github.com/mercury/mercuryPQCrypto/ed25519"
+	"github.com/mercury/mercuryPQCrypto/rsa"
+	"github.com/mercury/mercuryPQCrypto/subtle"
+	"github.com/mercury/mercuryPQCrypto/x509"
 	"errors"
 	"fmt"
 	"io"

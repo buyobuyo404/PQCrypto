@@ -13,7 +13,7 @@ package testenv
 import (
 	"errors"
 	"flag"
-	"github.com/mercury/mercurycrypto/internal/cfg"
+	"github.com/mercury/mercuryPQCrypto/internal/cfg"
 	"os"
 	"os/exec"
 	"path/filepath"

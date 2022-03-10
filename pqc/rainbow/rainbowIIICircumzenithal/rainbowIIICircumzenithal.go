@@ -2,17 +2,18 @@ package pqc
 
 import (
 	"fmt"
-	crypto "github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/liboqs-go/oqs"
+	crypto "github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/liboqs-go/oqs"
 	"io"
 	"log"
 )
 
 var signer = oqs.Signature{}
 var verifier = oqs.Signature{}
+
 const (
-	sigName = "Rainbow-III-Circumzenithal"
-	PublicKeySize = 264608
+	sigName        = "Rainbow-III-Circumzenithal"
+	PublicKeySize  = 264608
 	PrivateKeySize = 626048
 )
 

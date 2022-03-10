@@ -6,12 +6,12 @@ package tls
 
 import (
 	"bufio"
-	"github.com/mercury/mercurycrypto/ed25519"
-	"github.com/mercury/mercurycrypto/x509"
 	"encoding/hex"
 	"errors"
 	"flag"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/ed25519"
+	"github.com/mercury/mercuryPQCrypto/x509"
 	"io"
 	"io/ioutil"
 	"net"

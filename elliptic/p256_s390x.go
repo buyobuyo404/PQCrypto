@@ -2,14 +2,15 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build s390x
 // +build s390x
 
 package elliptic
 
 import (
-	"github.com/mercury/mercurycrypto/subtle"
-	//"github.com/mercury/mercurycrypto/internal/cpu"
-	"github.com/mercury/mercurycrypto/internal/cpu"
+	"github.com/mercury/mercuryPQCrypto/subtle"
+	//"github.com/mercury/mercuryPQCrypto/internal/cpu"
+	"github.com/mercury/mercuryPQCrypto/internal/cpu"
 	"math/big"
 	"unsafe"
 )

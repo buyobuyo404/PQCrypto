@@ -20,8 +20,8 @@ package sm4
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/cipher"
 	"errors"
+	"github.com/mercury/mercuryPQCrypto/cipher"
 	"strconv"
 )
 

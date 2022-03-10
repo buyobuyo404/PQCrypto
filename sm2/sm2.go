@@ -18,19 +18,19 @@ package sm2
 // reference to ecdsa
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/elliptic"
-	"github.com/mercury/mercurycrypto/rand"
 	"encoding/asn1"
 	"encoding/binary"
 	"errors"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"io"
 	"math/big"
 
 	"golang.org/x/crypto/cryptobyte"
 	cbasn1 "golang.org/x/crypto/cryptobyte/asn1"
 
-	"github.com/mercury/mercurycrypto/sm3"
+	"github.com/mercury/mercuryPQCrypto/sm3"
 )
 
 var (

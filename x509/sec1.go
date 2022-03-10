@@ -5,11 +5,11 @@
 package x509
 
 import (
-	"github.com/mercury/mercurycrypto/ecdsa"
-	"github.com/mercury/mercurycrypto/elliptic"
 	"encoding/asn1"
 	"errors"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/ecdsa"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
 	"math/big"
 )
 

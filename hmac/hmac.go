@@ -22,7 +22,7 @@ timing side-channels:
 package hmac
 
 import (
-	"github.com/mercury/mercurycrypto/subtle"
+	"github.com/mercury/mercuryPQCrypto/subtle"
 	"hash"
 )
 

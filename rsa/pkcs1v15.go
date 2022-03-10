@@ -6,12 +6,12 @@ package rsa
 
 import (
 	"errors"
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/subtle"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/subtle"
 	"io"
 	"math/big"
 
-	"github.com/mercury/mercurycrypto/internal/randutil"
+	"github.com/mercury/mercuryPQCrypto/internal/randutil"
 )
 
 // This file implements encryption and decryption using PKCS#1 v1.5 padding.
@@ -308,11 +308,11 @@ func pkcs1v15HashInfo(hash crypto.Hash, inLen int) (hashLen int, prefix []byte, 
 
 	hashLen = hash.Size()
 	if inLen != hashLen {
-		return 0, nil, errors.New("github.com/mercury/mercurycrypto/rsa: input must be hashed message")
+		return 0, nil, errors.New("github.com/mercury/mercuryPQCrypto/rsa: input must be hashed message")
 	}
 	prefix, ok := hashPrefixes[hash]
 	if !ok {
-		return 0, nil, errors.New("github.com/mercury/mercurycrypto/rsa: unsupported hash function")
+		return 0, nil, errors.New("github.com/mercury/mercuryPQCrypto/rsa: unsupported hash function")
 	}
 	return
 }

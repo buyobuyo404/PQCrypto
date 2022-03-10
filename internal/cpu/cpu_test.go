@@ -5,8 +5,8 @@
 package cpu_test
 
 import (
-	. "github.com/mercury/mercurycrypto/internal/cpu"
-	"github.com/mercury/mercurycrypto/internal/testenv"
+	. "github.com/mercury/mercuryPQCrypto/internal/cpu"
+	"github.com/mercury/mercuryPQCrypto/internal/testenv"
 	"os"
 	"os/exec"
 	"runtime"

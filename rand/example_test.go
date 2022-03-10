@@ -6,8 +6,8 @@ package rand_test
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/rand"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/rand"
 )
 
 // This example reads 10 cryptographically secure pseudorandom numbers from

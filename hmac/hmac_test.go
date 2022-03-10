@@ -5,11 +5,11 @@
 package hmac
 
 import (
-	"github.com/mercury/mercurycrypto/md5"
-	"github.com/mercury/mercurycrypto/sha1"
-	"github.com/mercury/mercurycrypto/sha256"
-	"github.com/mercury/mercurycrypto/sha512"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/md5"
+	"github.com/mercury/mercuryPQCrypto/sha1"
+	"github.com/mercury/mercuryPQCrypto/sha256"
+	"github.com/mercury/mercuryPQCrypto/sha512"
 	"hash"
 	"testing"
 )

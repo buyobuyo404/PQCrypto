@@ -5,7 +5,7 @@
 package aes
 
 import (
-	"github.com/mercury/mercurycrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/cipher"
 	"testing"
 )
 

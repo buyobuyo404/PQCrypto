@@ -17,8 +17,8 @@ package sm2
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/rand"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"io/ioutil"
 	"math/big"
 	"os"

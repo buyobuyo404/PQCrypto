@@ -1,13 +1,13 @@
 package oqstests
 
 import (
-	"github.com/mercury/mercurycrypto/liboqs-go/oqs/rand"
+	"github.com/mercury/mercuryPQCrypto/liboqs-go/oqs/rand"
 	"log"
 	"runtime"
 	"sync"
 	"testing"
 
-	"github.com/mercury/mercurycrypto/liboqs-go/oqs"
+	"github.com/mercury/mercuryPQCrypto/liboqs-go/oqs"
 )
 
 // disabledSigPatterns lists sigs for which unit testing is disabled

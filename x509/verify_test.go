@@ -5,11 +5,11 @@
 package x509
 
 import (
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/ecdsa"
-	"github.com/mercury/mercurycrypto/elliptic"
-	"github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/x509/pkix"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/ecdsa"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/x509/pkix"
 	"encoding/pem"
 	"errors"
 	"fmt"

@@ -7,9 +7,9 @@
 package sha256
 
 import (
-	"github.com/mercury/mercurycrypto"
 	"encoding/binary"
 	"errors"
+	"github.com/mercury/mercuryPQCrypto"
 	"hash"
 )
 
@@ -85,10 +85,10 @@ func (d *digest) MarshalBinary() ([]byte, error) {
 
 func (d *digest) UnmarshalBinary(b []byte) error {
 	if len(b) < len(magic224) || (d.is224 && string(b[:len(magic224)]) != magic224) || (!d.is224 && string(b[:len(magic256)]) != magic256) {
-		return errors.New("github.com/mercury/mercurycrypto/sha256: invalid hash state identifier")
+		return errors.New("github.com/mercury/mercuryPQCrypto/sha256: invalid hash state identifier")
 	}
 	if len(b) != marshaledSize {
-		return errors.New("github.com/mercury/mercurycrypto/sha256: invalid hash state size")
+		return errors.New("github.com/mercury/mercuryPQCrypto/sha256: invalid hash state size")
 	}
 	b = b[len(magic224):]
 	b, d.h[0] = consumeUint32(b)

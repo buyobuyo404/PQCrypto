@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build ignore
 // +build ignore
 
 // Generate a self-signed X.509 certificate for a TLS server. Outputs to
@@ -10,15 +11,15 @@
 package main
 
 import (
-	"github.com/mercury/mercurycrypto/ecdsa"
-	"github.com/mercury/mercurycrypto/ed25519"
-	"github.com/mercury/mercurycrypto/elliptic"
-	"github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/rsa"
-	"github.com/mercury/mercurycrypto/x509"
-	"github.com/mercury/mercurycrypto/x509/pkix"
 	"encoding/pem"
 	"flag"
+	"github.com/mercury/mercuryPQCrypto/ecdsa"
+	"github.com/mercury/mercuryPQCrypto/ed25519"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/rsa"
+	"github.com/mercury/mercuryPQCrypto/x509"
+	"github.com/mercury/mercuryPQCrypto/x509/pkix"
 	"log"
 	"math/big"
 	"net"

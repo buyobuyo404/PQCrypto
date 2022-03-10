@@ -18,8 +18,8 @@ package main
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/sha256"
-	"github.com/mercury/mercurycrypto/x509"
+	"github.com/mercury/mercuryPQCrypto/sha256"
+	"github.com/mercury/mercuryPQCrypto/x509"
 	"encoding/hex"
 	"encoding/pem"
 	"flag"

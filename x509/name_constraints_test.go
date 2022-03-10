@@ -6,14 +6,14 @@ package x509
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/ecdsa"
-	"github.com/mercury/mercurycrypto/elliptic"
-	"github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/x509/pkix"
 	"encoding/asn1"
 	"encoding/hex"
 	"encoding/pem"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/ecdsa"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/x509/pkix"
 	"io/ioutil"
 	"math/big"
 	"net"

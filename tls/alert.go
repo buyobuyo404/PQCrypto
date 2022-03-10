@@ -64,7 +64,7 @@ var alertText = map[alert]string{
 	alertDecryptError:           "error decrypting message",
 	alertProtocolVersion:        "protocol version not supported",
 	alertInsufficientSecurity:   "insufficient security level",
-	alertInternalError:          "github.com/mercury/mercurycrypto error",
+	alertInternalError:          "github.com/mercury/mercuryPQCrypto error",
 	alertInappropriateFallback:  "inappropriate fallback",
 	alertUserCanceled:           "user canceled",
 	alertNoRenegotiation:        "no renegotiation",

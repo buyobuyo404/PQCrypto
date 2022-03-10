@@ -163,11 +163,11 @@ static int CopyPEMRoots(CFDataRef *pemRoots, CFDataRef *untrustedPemRoots, bool 
 	int i;
 
 	if (debugDarwinRoots) {
-		fprintf(stderr, "github.com/mercury/mercurycrypto/x509: kSecTrustSettingsResultInvalid = %d\n", kSecTrustSettingsResultInvalid);
-		fprintf(stderr, "github.com/mercury/mercurycrypto/x509: kSecTrustSettingsResultTrustRoot = %d\n", kSecTrustSettingsResultTrustRoot);
-		fprintf(stderr, "github.com/mercury/mercurycrypto/x509: kSecTrustSettingsResultTrustAsRoot = %d\n", kSecTrustSettingsResultTrustAsRoot);
-		fprintf(stderr, "github.com/mercury/mercurycrypto/x509: kSecTrustSettingsResultDeny = %d\n", kSecTrustSettingsResultDeny);
-		fprintf(stderr, "github.com/mercury/mercurycrypto/x509: kSecTrustSettingsResultUnspecified = %d\n", kSecTrustSettingsResultUnspecified);
+		fprintf(stderr, "github.com/mercury/mercuryPQCrypto/x509: kSecTrustSettingsResultInvalid = %d\n", kSecTrustSettingsResultInvalid);
+		fprintf(stderr, "github.com/mercury/mercuryPQCrypto/x509: kSecTrustSettingsResultTrustRoot = %d\n", kSecTrustSettingsResultTrustRoot);
+		fprintf(stderr, "github.com/mercury/mercuryPQCrypto/x509: kSecTrustSettingsResultTrustAsRoot = %d\n", kSecTrustSettingsResultTrustAsRoot);
+		fprintf(stderr, "github.com/mercury/mercuryPQCrypto/x509: kSecTrustSettingsResultDeny = %d\n", kSecTrustSettingsResultDeny);
+		fprintf(stderr, "github.com/mercury/mercuryPQCrypto/x509: kSecTrustSettingsResultUnspecified = %d\n", kSecTrustSettingsResultUnspecified);
 	}
 
 	// Get certificates from all domains, not just System, this lets
@@ -211,7 +211,7 @@ static int CopyPEMRoots(CFDataRef *pemRoots, CFDataRef *untrustedPemRoots, bool 
 					CFErrorRef errRef = NULL;
 					CFStringRef summary = SecCertificateCopyShortDescription(NULL, cert, &errRef);
 					if (errRef != NULL) {
-						fprintf(stderr, "github.com/mercury/mercurycrypto/x509: SecCertificateCopyShortDescription failed\n");
+						fprintf(stderr, "github.com/mercury/mercuryPQCrypto/x509: SecCertificateCopyShortDescription failed\n");
 						CFRelease(errRef);
 						continue;
 					}
@@ -220,7 +220,7 @@ static int CopyPEMRoots(CFDataRef *pemRoots, CFDataRef *untrustedPemRoots, bool 
 					CFIndex maxSize = CFStringGetMaximumSizeForEncoding(length, kCFStringEncodingUTF8) + 1;
 					char *buffer = malloc(maxSize);
 					if (CFStringGetCString(summary, buffer, maxSize, kCFStringEncodingUTF8)) {
-						fprintf(stderr, "github.com/mercury/mercurycrypto/x509: %s returned %d\n", buffer, (int)result);
+						fprintf(stderr, "github.com/mercury/mercuryPQCrypto/x509: %s returned %d\n", buffer, (int)result);
 					}
 					free(buffer);
 					CFRelease(summary);
@@ -287,7 +287,7 @@ func loadSystemRoots() (*CertPool, error) {
 	var data, untrustedData C.CFDataRef
 	err := C.CopyPEMRoots(&data, &untrustedData, C.bool(debugDarwinRoots))
 	if err == -1 {
-		return nil, errors.New("github.com/mercury/mercurycrypto/x509: failed to load darwin system roots with cgo")
+		return nil, errors.New("github.com/mercury/mercuryPQCrypto/x509: failed to load darwin system roots with cgo")
 	}
 	defer C.CFRelease(C.CFTypeRef(data))
 	defer C.CFRelease(C.CFTypeRef(untrustedData))

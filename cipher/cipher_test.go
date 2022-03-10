@@ -6,9 +6,9 @@ package cipher_test
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/aes"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/des"
+	"github.com/mercury/mercuryPQCrypto/aes"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/des"
 	"testing"
 )
 
@@ -17,12 +17,12 @@ func TestCryptBlocks(t *testing.T) {
 	block, _ := aes.NewCipher(buf)
 
 	mode := cipher.NewCBCDecrypter(block, buf)
-	mustPanic(t, "github.com/mercury/mercurycrypto/cipher: input not full blocks", func() { mode.CryptBlocks(buf, buf[:3]) })
-	mustPanic(t, "github.com/mercury/mercurycrypto/cipher: output smaller than input", func() { mode.CryptBlocks(buf[:3], buf) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/cipher: input not full blocks", func() { mode.CryptBlocks(buf, buf[:3]) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/cipher: output smaller than input", func() { mode.CryptBlocks(buf[:3], buf) })
 
 	mode = cipher.NewCBCEncrypter(block, buf)
-	mustPanic(t, "github.com/mercury/mercurycrypto/cipher: input not full blocks", func() { mode.CryptBlocks(buf, buf[:3]) })
-	mustPanic(t, "github.com/mercury/mercurycrypto/cipher: output smaller than input", func() { mode.CryptBlocks(buf[:3], buf) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/cipher: input not full blocks", func() { mode.CryptBlocks(buf, buf[:3]) })
+	mustPanic(t, "github.com/mercury/mercuryPQCrypto/cipher: output smaller than input", func() { mode.CryptBlocks(buf[:3], buf) })
 }
 
 func mustPanic(t *testing.T, msg string, f func()) {

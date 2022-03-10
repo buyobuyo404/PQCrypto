@@ -3,9 +3,9 @@ package padding
 import (
 	"bytes"
 	"fmt"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/sm4"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/sm4"
 	"testing"
 )
 

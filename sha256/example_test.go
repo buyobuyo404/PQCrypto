@@ -5,8 +5,8 @@
 package sha256_test
 
 import (
-	"github.com/mercury/mercurycrypto/sha256"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/sha256"
 	"io"
 	"log"
 	"os"

@@ -10,8 +10,8 @@ package rsa
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto"
 	"errors"
+	"github.com/mercury/mercuryPQCrypto"
 	"hash"
 	"io"
 	"math/big"
@@ -30,13 +30,13 @@ func emsaPSSEncode(mHash []byte, emBits int, salt []byte, hash hash.Hash) ([]byt
 	// 2.  Let mHash = Hash(M), an octet string of length hLen.
 
 	if len(mHash) != hLen {
-		return nil, errors.New("github.com/mercury/mercurycrypto/rsa: input must be hashed message")
+		return nil, errors.New("github.com/mercury/mercuryPQCrypto/rsa: input must be hashed message")
 	}
 
 	// 3.  If emLen < hLen + sLen + 2, output "encoding error" and stop.
 
 	if emLen < hLen+sLen+2 {
-		return nil, errors.New("github.com/mercury/mercurycrypto/rsa: key size too small for PSS signature")
+		return nil, errors.New("github.com/mercury/mercuryPQCrypto/rsa: key size too small for PSS signature")
 	}
 
 	em := make([]byte, emLen)

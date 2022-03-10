@@ -10,7 +10,7 @@ import (
 	"bytes"
 	"encoding"
 	"fmt"
-	"github.com/mercury/mercurycrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"hash"
 	"io"
 	"testing"

@@ -1,3 +1,4 @@
+//go:build amd64 && (linux || darwin)
 // +build amd64
 // +build linux darwin
 
@@ -8,7 +9,7 @@
 package sha1_test
 
 import (
-	"github.com/mercury/mercurycrypto/sha1"
+	"github.com/mercury/mercuryPQCrypto/sha1"
 	"syscall"
 	"testing"
 )

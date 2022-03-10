@@ -6,9 +6,9 @@ package tls
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/hmac"
-	"github.com/mercury/mercurycrypto/rsa"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/hmac"
+	"github.com/mercury/mercuryPQCrypto/rsa"
 	"errors"
 	"hash"
 	"sync/atomic"

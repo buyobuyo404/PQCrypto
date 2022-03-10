@@ -5,9 +5,9 @@
 package des
 
 import (
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/internal/subtle"
 	"encoding/binary"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/internal/subtle"
 	"strconv"
 )
 
@@ -17,7 +17,7 @@ const BlockSize = 8
 type KeySizeError int
 
 func (k KeySizeError) Error() string {
-	return "github.com/mercury/mercurycrypto/des: invalid key size " + strconv.Itoa(int(k))
+	return "github.com/mercury/mercuryPQCrypto/des: invalid key size " + strconv.Itoa(int(k))
 }
 
 // desCipher is an instance of DES encryption.
@@ -40,26 +40,26 @@ func (c *desCipher) BlockSize() int { return BlockSize }
 
 func (c *desCipher) Encrypt(dst, src []byte) {
 	if len(src) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/des: input not full block")
+		panic("github.com/mercury/mercuryPQCrypto/des: input not full block")
 	}
 	if len(dst) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/des: output not full block")
+		panic("github.com/mercury/mercuryPQCrypto/des: output not full block")
 	}
 	if subtle.InexactOverlap(dst[:BlockSize], src[:BlockSize]) {
-		panic("github.com/mercury/mercurycrypto/des: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/des: invalid buffer overlap")
 	}
 	encryptBlock(c.subkeys[:], dst, src)
 }
 
 func (c *desCipher) Decrypt(dst, src []byte) {
 	if len(src) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/des: input not full block")
+		panic("github.com/mercury/mercuryPQCrypto/des: input not full block")
 	}
 	if len(dst) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/des: output not full block")
+		panic("github.com/mercury/mercuryPQCrypto/des: output not full block")
 	}
 	if subtle.InexactOverlap(dst[:BlockSize], src[:BlockSize]) {
-		panic("github.com/mercury/mercurycrypto/des: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/des: invalid buffer overlap")
 	}
 	decryptBlock(c.subkeys[:], dst, src)
 }
@@ -86,13 +86,13 @@ func (c *tripleDESCipher) BlockSize() int { return BlockSize }
 
 func (c *tripleDESCipher) Encrypt(dst, src []byte) {
 	if len(src) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/des: input not full block")
+		panic("github.com/mercury/mercuryPQCrypto/des: input not full block")
 	}
 	if len(dst) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/des: output not full block")
+		panic("github.com/mercury/mercuryPQCrypto/des: output not full block")
 	}
 	if subtle.InexactOverlap(dst[:BlockSize], src[:BlockSize]) {
-		panic("github.com/mercury/mercurycrypto/des: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/des: invalid buffer overlap")
 	}
 
 	b := binary.BigEndian.Uint64(src)
@@ -121,13 +121,13 @@ func (c *tripleDESCipher) Encrypt(dst, src []byte) {
 
 func (c *tripleDESCipher) Decrypt(dst, src []byte) {
 	if len(src) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/des: input not full block")
+		panic("github.com/mercury/mercuryPQCrypto/des: input not full block")
 	}
 	if len(dst) < BlockSize {
-		panic("github.com/mercury/mercurycrypto/des: output not full block")
+		panic("github.com/mercury/mercuryPQCrypto/des: output not full block")
 	}
 	if subtle.InexactOverlap(dst[:BlockSize], src[:BlockSize]) {
-		panic("github.com/mercury/mercurycrypto/des: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/des: invalid buffer overlap")
 	}
 
 	b := binary.BigEndian.Uint64(src)

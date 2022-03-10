@@ -5,9 +5,9 @@
 package aes
 
 import (
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/internal/subtle"
 	"encoding/binary"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/internal/subtle"
 )
 
 // Assert that aesCipherAsm implements the ctrAble interface.
@@ -66,10 +66,10 @@ func (c *aesctr) refill() {
 
 func (c *aesctr) XORKeyStream(dst, src []byte) {
 	if len(dst) < len(src) {
-		panic("github.com/mercury/mercurycrypto/cipher: output smaller than input")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: output smaller than input")
 	}
 	if subtle.InexactOverlap(dst[:len(src)], src) {
-		panic("github.com/mercury/mercurycrypto/cipher: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: invalid buffer overlap")
 	}
 	for len(src) > 0 {
 		if len(c.buffer) == 0 {

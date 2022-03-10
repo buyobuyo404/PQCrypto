@@ -5,8 +5,8 @@
 package sha1_test
 
 import (
-	"github.com/mercury/mercurycrypto/sha1"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/sha1"
 	"io"
 	"log"
 	"os"

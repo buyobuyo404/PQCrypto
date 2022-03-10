@@ -9,9 +9,9 @@
 package sha1
 
 import (
-	"github.com/mercury/mercurycrypto"
 	"encoding/binary"
 	"errors"
+	"github.com/mercury/mercuryPQCrypto"
 	"hash"
 )
 
@@ -63,10 +63,10 @@ func (d *digest) MarshalBinary() ([]byte, error) {
 
 func (d *digest) UnmarshalBinary(b []byte) error {
 	if len(b) < len(magic) || string(b[:len(magic)]) != magic {
-		return errors.New("github.com/mercury/mercurycrypto/sha1: invalid hash state identifier")
+		return errors.New("github.com/mercury/mercuryPQCrypto/sha1: invalid hash state identifier")
 	}
 	if len(b) != marshaledSize {
-		return errors.New("github.com/mercury/mercurycrypto/sha1: invalid hash state size")
+		return errors.New("github.com/mercury/mercuryPQCrypto/sha1: invalid hash state size")
 	}
 	b = b[len(magic):]
 	b, d.h[0] = consumeUint32(b)

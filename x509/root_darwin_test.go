@@ -5,7 +5,7 @@
 package x509
 
 import (
-	"github.com/mercury/mercurycrypto/rsa"
+	"github.com/mercury/mercuryPQCrypto/rsa"
 	"os"
 	"os/exec"
 	"path/filepath"

@@ -1,64 +1,78 @@
-# mercurycrypto-README
+# mercuryPQCrypto-README
 
+## 1 mercuryPQCrypto: Mercury Cryptography Project
 
+**mercuryPQCrypto** is a cryptography project conducted by Chongqing University, China, which considers crypto agility and integrates [go 1.14.10 crypto](https://github.com/golang/go/tree/master/src/crypto)[^1], [Open Quantum Safe (OQS) liboqs/liboqs-go 0.7.1](https://openquantumsafe.org/)[^2] and [tjfoc gmsm-1.4.1](https://github.com/tjfoc/gmsm)[^3]. This project aims to study the migration and application adaptation of post quantum cryptography (PQC) algorithms and Chinese national commercial cryptography algorithms (sm-series).
 
-[TOC]
-
-## 1 mercurycrypto水星密码学项目
-
-mercurycrypto：是一个考虑到密码敏捷，且整合了[go-1.14.10](https://github.com/golang/go) crypto模块， [open-quantum-safe-0.7.1](https://github.com/open-quantum-safe/liboqs-go)以及[苏州同济区块链研究院gmsm-1.4.1](https://github.com/tjfoc/gmsm)的密码学项目。其目的是为了后量子密码算法和国密算法在go环境下的迁移与应用适配研究。
-
-当前已经引入到mercurycrypto中的**后量子密码算法**，主要是进入到NIST后量子密码标准化进程第三轮中的签名决赛算法
+We have integrated NIST Post-Quantum Cryptography Standardization round 3 digital signature finalists though OQS liboqs/liboqs-go, including:
 
 - CRYSTALS-Dilithium: Dilithium2, Dilithium3, Dilithium5, Dilithium2-AES, Dilithium3-AES, Dilithium5-AES
 - Falcon: Falcon-512, Falcon-1024
-- Rainbow: Rainbow-I-Classic, Rainbow-I-Circumzenithal, Rainbow-I-Compressed, Rainbow-III-Classic, Rainbow-III-Circumzenithal, Rainbow-III-Compressed, Rainbow-V-Classic, Rainbow-V-Circumzenithal, Rainbow-V-Compressed
+- Rainbow: Rainbow-III-Classic, Rainbow-III-Circumzenithal, Rainbow-III-Compressed, Rainbow-V-Classic, Rainbow-V-Circumzenithal, Rainbow-V-Compressed
 
-**国密算法**有：
+It's important to note that since a new work[^4] makes key-recovery practical for the Rainbow SL 1 parameters become possible, we will not integrate SL 1 parameters in the future work.
+
+And Chinese national commercial cryptography algorithms by tjfoc gmsm:
 
 - SM2
 - SM3
 - SM4
 
-在以上涉及到的算法中，后量子签名算法目前不仅支持密钥生成、签名和验签，并且支持X509.go中的全部操作以及pkcs8.go中的私钥格式转换，如何使用可以仿照go 1.14.10中关于crypto的文档说明，mercurycrypto各种方法的接口相较于go 1.14.10没有变化。而关于国密算法现在只支持简单的密钥生成、加密、解密、签名、验签、以及摘要计算等操作。
+Among the above algorithms, the post quantum signature algorithms not only support key generation, signature and verification, but also supports all operations in X509.go and private key format conversion in PKCS8.go. You can follow the instructions on crypto in go 1.14.10 to use them. The interfaces of mercuryPQCrypto methods are unchanged compared with go 1.14.10. Currently, the Chinese national commercial cryptography algorithms only supports simple key generation, encryption, decryption, signature, verification, and digest computation.
 
-## 2 使用说明
+## 2 Instructions
 
-### 2.1 环境变量
+### 2.1 Environment Variable
 
-1. 本项目目前仅在ubuntu 18.04中进行过测试
+1. OS: ubuntu 18.04 +.
+2. GoLang: Please make sure you have installed go 1.14.10 and/or above.
+3. liboqs and liboqs-go: Please follow the project instructions of [liboqs](https://github.com/open-quantum-safe/liboqs) and [liboqs-go](https://github.com/open-quantum-safe/liboqs-go)  and configure the corresponding environment variable, both of them must be configured correctly.
 
-2. go语言的环境变量：请下载go 1.14.10及以上版本，并被配置好相应的环境变量，同时设置好国内代理
-3. liboqs-go所需要的环境变量：请按照[liboqs](https://github.com/open-quantum-safe/liboqs)和[liboqs-go](https://github.com/open-quantum-safe/liboqs-go)的项目说明配置好相应的环境，两者所需要的环境**必须**都进行配置
+### 2.2 Clone the Project
 
-### 2.2 使用注意
+```
+git clone https://github.com/buyobuyo404/mercuryPQCrypto.git
+```
 
-1. 导入包设置：使用pqc算法在引入包时，需要显示的为包起别名，否则可能出现包冲突，如：
+Then put mercuryPQCrypto into `$gopath/github.com/mercury` folder.
+
+### 2.3 Note
+
+1. Import Package: when importing PQC algorithm packages, the package aliases need to be displayed, otherwise package conflicts may occur. You can do like this:
 
 ```go
 import (
-	falcon1024 "github.com/mercury/mercurycrypto/pqc/falcon/falcon1024"
-	falcon512 "github.com/mercury/mercurycrypto/pqc/falcon/falcon512"
+	falcon1024 "github.com/mercury/mercuryPQCrypto/pqc/falcon/falcon1024"
+	falcon512 "github.com/mercury/mercuryPQCrypto/pqc/falcon/falcon512"
 
-	dilithium2 "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium2"
-	dilithium2AES "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium2AES"
-	dilithium3 "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium3"
-	dilithium3AES "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium3AES"
-	dilithium5 "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium5"
-	dilithium5AES "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium5AES"
+	dilithium2 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium2"
+	dilithium2AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium2AES"
+	dilithium3 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium3"
+	dilithium3AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium3AES"
+	dilithium5 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium5"
+	dilithium5AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium5AES"
 
-	rainbowICircumzenithal "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowICircumzenithal"
-	rainbowIClassic "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIClassic"
-	rainbowICompressed "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowICompressed"
-	rainbowIIICircumzenithal "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIIICircumzenithal"
-	rainbowIIIClassic "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIIIClassic"
-	rainbowIIICompressed "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIIICompressed"
-	rainbowVCircumzenithal "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowVCircumzenithal"
-	rainbowVClassic "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowVClassic"
-	rainbowVCompressed "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowVCompressed"
+	rainbowIIICircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICircumzenithal"
+	rainbowIIIClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIIClassic"
+	rainbowIIICompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICompressed"
+	rainbowVCircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVCircumzenithal"
+	rainbowVClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVClassic"
+	rainbowVCompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVCompressed"
 )
 ```
 
-## 下一步工作计划
+## 3 Future Work
 
-to be continued...
+1. Integrate NIST Post-Quantum Cryptography Standardization **round 3** submissions digital signature algorithms alternate candidates, public-key encryption and key-establishment finalists and alternate candidates.
+2. Keep a close eye on NIST Post-Quantum Cryptography Standardization **round 4** and make quick adjustments accordingly.
+3. Implement the algorithms in NIST PQC **round 4** using go.
+4. Use this project to study the pqc migration in PKI and blockchain.
+
+## 4 About Us
+
+We are post quantum cryptography research team, from School of Big Data and Software, Chongqing University, China. Our main research fields includes post quantum cryptography and its engineering migration and application.
+
+[^1]: go crypto: Go is an open source programming language that makes it easy to build simple, reliable, and efficient software. Moreover, crypto is the cryptographic module of go, which provides various operations on cryptography and certificates. https://github.com/golang/go/tree/master/src/crypto
+[^2]: Open Quantum Safe (OQS) liboqs/liboqs-go 0.7.1: liboqs is an open source C library for quantum-safe cryptographic algorithms and we can use post-quantum algorithms from liboqs in the go languages via liboqs-go wrappers. The project is mainly implemented by Open Quantum Safe (OQS), University of Waterloo. https://openquantumsafe.org/
+[^3]: tjfoc gmsm: It is the Chinese national commercial cryptography algorithms go implementation by Suzhou Tongji Blockchain Research Institute. https://github.com/tjfoc/gmsm
+[^4]: Breaking Rainbow Takes a Weekend on a Laptop, Ward Beullens https://eprint.iacr.org/2022/214.pdf

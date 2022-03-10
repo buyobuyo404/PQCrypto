@@ -72,7 +72,7 @@ func (h Hash) Size() int {
 	if h > 0 && h < maxHash {
 		return int(digestSizes[h])
 	}
-	panic("github.com/mercury/mercurycrypto: Size of unknown hash function")
+	panic("github.com/mercury/mercuryPQCrypto: Size of unknown hash function")
 }
 
 var hashes = make([]func() hash.Hash, maxHash)
@@ -86,7 +86,7 @@ func (h Hash) New() hash.Hash {
 			return f()
 		}
 	}
-	panic("github.com/mercury/mercurycrypto: requested hash function #" + strconv.Itoa(int(h)) + " is unavailable")
+	panic("github.com/mercury/mercuryPQCrypto: requested hash function #" + strconv.Itoa(int(h)) + " is unavailable")
 }
 
 // Available reports whether the given hash function is linked into the binary.
@@ -99,7 +99,7 @@ func (h Hash) Available() bool {
 // packages that implement hash functions.
 func RegisterHash(h Hash, f func() hash.Hash) {
 	if h >= maxHash {
-		panic("github.com/mercury/mercurycrypto: RegisterHash of unknown hash function")
+		panic("github.com/mercury/mercuryPQCrypto: RegisterHash of unknown hash function")
 	}
 	hashes[h] = f
 }

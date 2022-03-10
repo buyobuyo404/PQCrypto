@@ -4,7 +4,7 @@
 
 package des_test
 
-import "github.com/mercury/mercurycrypto/des"
+import "github.com/mercury/mercuryPQCrypto/des"
 
 func ExampleNewTripleDESCipher() {
 	// NewTripleDESCipher can also be used when EDE2 is required by

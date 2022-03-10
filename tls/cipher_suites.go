@@ -5,16 +5,16 @@
 package tls
 
 import (
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/aes"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/des"
-	"github.com/mercury/mercurycrypto/hmac"
-	"github.com/mercury/mercurycrypto/rc4"
-	"github.com/mercury/mercurycrypto/sha1"
-	"github.com/mercury/mercurycrypto/sha256"
-	"github.com/mercury/mercurycrypto/x509"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/aes"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/des"
+	"github.com/mercury/mercuryPQCrypto/hmac"
+	"github.com/mercury/mercuryPQCrypto/rc4"
+	"github.com/mercury/mercuryPQCrypto/sha1"
+	"github.com/mercury/mercuryPQCrypto/sha256"
+	"github.com/mercury/mercuryPQCrypto/x509"
 	"hash"
 
 	"golang.org/x/crypto/chacha20poly1305"

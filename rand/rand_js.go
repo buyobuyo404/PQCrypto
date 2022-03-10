@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build js && wasm
 // +build js,wasm
 
 package rand
@@ -12,7 +13,7 @@ func init() {
 	Reader = &reader{}
 }
 
-var jsCrypto = js.Global().Get("github.com/mercury/mercurycrypto")
+var jsCrypto = js.Global().Get("github.com/mercury/mercuryPQCrypto")
 var uint8Array = js.Global().Get("Uint8Array")
 
 // reader implements a pseudorandom generator

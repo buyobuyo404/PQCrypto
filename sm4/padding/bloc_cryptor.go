@@ -1,7 +1,7 @@
 package padding
 
 import (
-	"github.com/mercury/mercurycrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/cipher"
 	"io"
 )
 

@@ -6,12 +6,12 @@ package tls
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/elliptic"
-	"github.com/mercury/mercurycrypto/x509"
 	"encoding/pem"
 	"errors"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto/x509"
 	"io"
 	"net"
 	"os"

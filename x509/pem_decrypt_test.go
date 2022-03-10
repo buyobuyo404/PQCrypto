@@ -6,9 +6,9 @@ package x509
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/rand"
 	"encoding/base64"
 	"encoding/pem"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"strings"
 	"testing"
 )

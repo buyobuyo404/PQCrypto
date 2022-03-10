@@ -8,10 +8,10 @@ package sha512
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/rand"
 	"encoding"
 	"encoding/hex"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/rand"
 	"hash"
 	"io"
 	"testing"

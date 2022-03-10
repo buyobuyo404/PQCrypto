@@ -15,37 +15,37 @@ import (
 	"encoding/pem"
 	"errors"
 	"fmt"
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/dsa"
-	"github.com/mercury/mercurycrypto/ecdsa"
-	"github.com/mercury/mercurycrypto/ed25519"
-	"github.com/mercury/mercurycrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/dsa"
+	"github.com/mercury/mercuryPQCrypto/ecdsa"
+	"github.com/mercury/mercuryPQCrypto/ed25519"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
 
-	falcon1024 "github.com/mercury/mercurycrypto/pqc/falcon/falcon1024"
-	falcon512 "github.com/mercury/mercurycrypto/pqc/falcon/falcon512"
+	falcon1024 "github.com/mercury/mercuryPQCrypto/pqc/falcon/falcon1024"
+	falcon512 "github.com/mercury/mercuryPQCrypto/pqc/falcon/falcon512"
 
-	dilithium2 "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium2"
-	dilithium2AES "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium2AES"
-	dilithium3 "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium3"
-	dilithium3AES "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium3AES"
-	dilithium5 "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium5"
-	dilithium5AES "github.com/mercury/mercurycrypto/pqc/dilithium/dilithium5AES"
+	dilithium2 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium2"
+	dilithium2AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium2AES"
+	dilithium3 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium3"
+	dilithium3AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium3AES"
+	dilithium5 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium5"
+	dilithium5AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium5AES"
 
-	rainbowICircumzenithal "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowICircumzenithal"
-	rainbowIClassic "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIClassic"
-	rainbowICompressed "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowICompressed"
-	rainbowIIICircumzenithal "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIIICircumzenithal"
-	rainbowIIIClassic "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIIIClassic"
-	rainbowIIICompressed "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowIIICompressed"
-	rainbowVCircumzenithal "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowVCircumzenithal"
-	rainbowVClassic "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowVClassic"
-	rainbowVCompressed "github.com/mercury/mercurycrypto/pqc/rainbow/rainbowVCompressed"
+	rainbowICircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowICircumzenithal"
+	rainbowIClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIClassic"
+	rainbowICompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowICompressed"
+	rainbowIIICircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICircumzenithal"
+	rainbowIIIClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIIClassic"
+	rainbowIIICompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICompressed"
+	rainbowVCircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVCircumzenithal"
+	rainbowVClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVClassic"
+	rainbowVCompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVCompressed"
 
-	"github.com/mercury/mercurycrypto/rsa"
-	_ "github.com/mercury/mercurycrypto/sha1"
-	_ "github.com/mercury/mercurycrypto/sha256"
-	_ "github.com/mercury/mercurycrypto/sha512"
-	"github.com/mercury/mercurycrypto/x509/pkix"
+	"github.com/mercury/mercuryPQCrypto/rsa"
+	_ "github.com/mercury/mercuryPQCrypto/sha1"
+	_ "github.com/mercury/mercuryPQCrypto/sha256"
+	_ "github.com/mercury/mercuryPQCrypto/sha512"
+	"github.com/mercury/mercuryPQCrypto/x509/pkix"
 	"io"
 	"math/big"
 	"net"
@@ -1311,8 +1311,8 @@ func checkSignature(algo SignatureAlgorithm, signed, signature []byte, publicKey
 		}
 		return
 
-	//default:
-	//	fmt.Println("公钥类型: ", pub)
+		//default:
+		//	fmt.Println("公钥类型: ", pub)
 	}
 	return ErrUnsupportedAlgorithm
 }
@@ -2247,7 +2247,7 @@ func buildExtensions(template *Certificate, subjectIsEmpty bool, authorityKeyId 
 			if oid, ok := oidFromExtKeyUsage(u); ok {
 				oids = append(oids, oid)
 			} else {
-				panic("github.com/mercury/mercurycrypto error")
+				panic("github.com/mercury/mercuryPQCrypto error")
 			}
 		}
 

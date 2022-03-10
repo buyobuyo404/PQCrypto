@@ -6,7 +6,7 @@
 
 package cipher
 
-import "github.com/mercury/mercurycrypto/internal/subtle"
+import "github.com/mercury/mercuryPQCrypto/internal/subtle"
 
 type cfb struct {
 	b       Block
@@ -19,10 +19,10 @@ type cfb struct {
 
 func (x *cfb) XORKeyStream(dst, src []byte) {
 	if len(dst) < len(src) {
-		panic("github.com/mercury/mercurycrypto/cipher: output smaller than input")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: output smaller than input")
 	}
 	if subtle.InexactOverlap(dst[:len(src)], src) {
-		panic("github.com/mercury/mercurycrypto/cipher: invalid buffer overlap")
+		panic("github.com/mercury/mercuryPQCrypto/cipher: invalid buffer overlap")
 	}
 	for len(src) > 0 {
 		if x.outUsed == len(x.out) {

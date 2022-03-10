@@ -10,7 +10,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/mercury/mercurycrypto/liboqs-go/oqs"
+	"github.com/mercury/mercuryPQCrypto/liboqs-go/oqs"
 )
 
 // Counter is a thread-safe counter.

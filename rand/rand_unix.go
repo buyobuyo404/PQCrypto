@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
+//go:build aix || darwin || dragonfly || freebsd || linux || netbsd || openbsd || plan9 || solaris
 // +build aix darwin dragonfly freebsd linux netbsd openbsd plan9 solaris
 
 // Unix cryptographically secure pseudorandom number
@@ -11,9 +12,9 @@ package rand
 
 import (
 	"bufio"
-	"github.com/mercury/mercurycrypto/aes"
-	"github.com/mercury/mercurycrypto/cipher"
 	"encoding/binary"
+	"github.com/mercury/mercuryPQCrypto/aes"
+	"github.com/mercury/mercuryPQCrypto/cipher"
 	"io"
 	"os"
 	"runtime"

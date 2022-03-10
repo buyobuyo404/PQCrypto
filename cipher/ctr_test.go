@@ -6,7 +6,7 @@ package cipher_test
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/cipher"
 	"testing"
 )
 

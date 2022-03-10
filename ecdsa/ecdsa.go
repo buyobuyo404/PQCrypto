@@ -27,14 +27,14 @@ package ecdsa
 //     http://www.secg.org/sec1-v2.pdf
 
 import (
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/aes"
-	"github.com/mercury/mercurycrypto/cipher"
-	"github.com/mercury/mercurycrypto/elliptic"
-	"github.com/mercury/mercurycrypto/internal/randutil"
-	"github.com/mercury/mercurycrypto/sha512"
 	"encoding/asn1"
 	"errors"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/aes"
+	"github.com/mercury/mercuryPQCrypto/cipher"
+	"github.com/mercury/mercuryPQCrypto/elliptic"
+	"github.com/mercury/mercuryPQCrypto/internal/randutil"
+	"github.com/mercury/mercuryPQCrypto/sha512"
 	"io"
 	"math/big"
 )

@@ -5,7 +5,7 @@
 package tls
 
 import (
-	"github.com/mercury/mercurycrypto"
+	"github.com/mercury/mercuryPQCrypto"
 	"testing"
 )
 

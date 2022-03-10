@@ -6,7 +6,7 @@ package cpu_test
 
 import (
 	"errors"
-	. "github.com/mercury/mercurycrypto/internal/cpu"
+	. "github.com/mercury/mercuryPQCrypto/internal/cpu"
 	"io/ioutil"
 	"regexp"
 	"testing"

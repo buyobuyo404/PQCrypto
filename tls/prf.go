@@ -5,14 +5,14 @@
 package tls
 
 import (
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/hmac"
-	"github.com/mercury/mercurycrypto/md5"
-	"github.com/mercury/mercurycrypto/sha1"
-	"github.com/mercury/mercurycrypto/sha256"
-	"github.com/mercury/mercurycrypto/sha512"
 	"errors"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/hmac"
+	"github.com/mercury/mercuryPQCrypto/md5"
+	"github.com/mercury/mercuryPQCrypto/sha1"
+	"github.com/mercury/mercuryPQCrypto/sha256"
+	"github.com/mercury/mercuryPQCrypto/sha512"
 	"hash"
 )
 
@@ -247,7 +247,7 @@ func (h *finishedHash) discardHandshakeBuffer() {
 // ConnectionState.ekm when renegotiation is enabled and thus
 // we wish to fail all key-material export requests.
 func noExportedKeyingMaterial(label string, context []byte, length int) ([]byte, error) {
-	return nil, errors.New("github.com/mercury/mercurycrypto/tls: ExportKeyingMaterial is unavailable when renegotiation is enabled")
+	return nil, errors.New("github.com/mercury/mercuryPQCrypto/tls: ExportKeyingMaterial is unavailable when renegotiation is enabled")
 }
 
 // ekmFromMasterSecret generates exported keying material as defined in RFC 5705.
@@ -256,7 +256,7 @@ func ekmFromMasterSecret(version uint16, suite *cipherSuite, masterSecret, clien
 		switch label {
 		case "client finished", "server finished", "master secret", "key expansion":
 			// These values are reserved and may not be used.
-			return nil, fmt.Errorf("github.com/mercury/mercurycrypto/tls: reserved ExportKeyingMaterial label: %s", label)
+			return nil, fmt.Errorf("github.com/mercury/mercuryPQCrypto/tls: reserved ExportKeyingMaterial label: %s", label)
 		}
 
 		seedLen := len(serverRandom) + len(clientRandom)
@@ -270,7 +270,7 @@ func ekmFromMasterSecret(version uint16, suite *cipherSuite, masterSecret, clien
 
 		if context != nil {
 			if len(context) >= 1<<16 {
-				return nil, fmt.Errorf("github.com/mercury/mercurycrypto/tls: ExportKeyingMaterial context too long")
+				return nil, fmt.Errorf("github.com/mercury/mercuryPQCrypto/tls: ExportKeyingMaterial context too long")
 			}
 			seed = append(seed, byte(len(context)>>8), byte(len(context)))
 			seed = append(seed, context...)

@@ -5,8 +5,8 @@
 package md5_test
 
 import (
-	"github.com/mercury/mercurycrypto/md5"
 	"fmt"
+	"github.com/mercury/mercuryPQCrypto/md5"
 	"io"
 	"log"
 	"os"

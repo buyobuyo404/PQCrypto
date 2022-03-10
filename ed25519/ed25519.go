@@ -17,11 +17,11 @@ package ed25519
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto"
-	"github.com/mercury/mercurycrypto/ed25519/internal/edwards25519"
-	cryptorand "github.com/mercury/mercurycrypto/rand"
-	"github.com/mercury/mercurycrypto/sha512"
 	"errors"
+	"github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto/ed25519/internal/edwards25519"
+	cryptorand "github.com/mercury/mercuryPQCrypto/rand"
+	"github.com/mercury/mercuryPQCrypto/sha512"
 	"io"
 	"strconv"
 )

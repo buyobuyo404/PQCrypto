@@ -6,8 +6,8 @@ package tls
 
 import (
 	"bytes"
-	"github.com/mercury/mercurycrypto/rsa"
-	"github.com/mercury/mercurycrypto/x509"
+	"github.com/mercury/mercuryPQCrypto/rsa"
+	"github.com/mercury/mercuryPQCrypto/x509"
 	"encoding/base64"
 	"encoding/binary"
 	"encoding/pem"
