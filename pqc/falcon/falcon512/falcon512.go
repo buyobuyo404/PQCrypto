@@ -2,7 +2,7 @@ package falcon512
 
 import (
 	"fmt"
-	crypto "github.com/mercury/mercuryPQCrypto"
+	"github.com/mercury/mercuryPQCrypto"
 	"github.com/mercury/mercuryPQCrypto/liboqs-go/oqs"
 	"io"
 	"log"

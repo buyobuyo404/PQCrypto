@@ -31,9 +31,6 @@ import (
 	dilithium5 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium5"
 	dilithium5AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium5AES"
 
-	rainbowICircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowICircumzenithal"
-	rainbowIClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIClassic"
-	rainbowICompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowICompressed"
 	rainbowIIICircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICircumzenithal"
 	rainbowIIIClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIIClassic"
 	rainbowIIICompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICompressed"
@@ -151,15 +148,6 @@ func marshalPublicKey(pub interface{}) (publicKeyBytes []byte, publicKeyAlgorith
 		publicKeyBytes = pub.Pk
 		publicKeyAlgorithm.Algorithm = oidPublicKeyDilithium5AES
 
-	case *rainbowIClassic.PublicKey:
-		publicKeyBytes = pub.Pk
-		publicKeyAlgorithm.Algorithm = oidPublicKeyRainbowIClassic
-	case *rainbowICircumzenithal.PublicKey:
-		publicKeyBytes = pub.Pk
-		publicKeyAlgorithm.Algorithm = oidPublicKeyRainbowICircumzenithal
-	case *rainbowICompressed.PublicKey:
-		publicKeyBytes = pub.Pk
-		publicKeyAlgorithm.Algorithm = oidPublicKeyRainbowICompressed
 	case *rainbowIIIClassic.PublicKey:
 		publicKeyBytes = pub.Pk
 		publicKeyAlgorithm.Algorithm = oidPublicKeyRainbowIIIClassic
@@ -295,9 +283,6 @@ const (
 	PureDilithium3AES
 	PureDilithium5AES
 	// Rainbow
-	PureRainbowIClassic
-	PureRainbowICircumzenithal
-	PureRainbowICompressed
 	PureRainbowIIIClassic
 	PureRainbowIIICircumzenithal
 	PureRainbowIIICompressed
@@ -341,9 +326,6 @@ const (
 	Dilithium2AES
 	Dilithium3AES
 	Dilithium5AES
-	RainbowIClassic
-	RainbowICircumzenithal
-	RainbowICompressed
 	RainbowIIIClassic
 	RainbowIIICircumzenithal
 	RainbowIIICompressed
@@ -366,9 +348,6 @@ var publicKeyAlgoName = [...]string{
 	Dilithium2AES:            "Dilithium2AES",
 	Dilithium3AES:            "Dilithium3AES",
 	Dilithium5AES:            "Dilithium5AES",
-	RainbowIClassic:          "RainbowIClassic",
-	RainbowICircumzenithal:   "RainbowICircumzenithal",
-	RainbowICompressed:       "RainbowICompressed",
 	RainbowIIIClassic:        "RainbowIIIClassic",
 	RainbowIIICircumzenithal: "RainbowIIICircumzenithal",
 	RainbowIIICompressed:     "RainbowIIICompressed",
@@ -466,9 +445,6 @@ var (
 	oidSignatureDilithium3AES = asn1.ObjectIdentifier{1, 3, 1, 4}
 	oidSignatureDilithium5AES = asn1.ObjectIdentifier{1, 5, 1, 5}
 
-	oidSignatureRainbowIClassic          = asn1.ObjectIdentifier{1, 1, 2, 0}
-	oidSignatureRainbowICircumzenithal   = asn1.ObjectIdentifier{1, 1, 2, 1}
-	oidSignatureRainbowICompressed       = asn1.ObjectIdentifier{1, 1, 2, 2}
 	oidSignatureRainbowIIIClassic        = asn1.ObjectIdentifier{1, 3, 2, 3}
 	oidSignatureRainbowIIICircumzenithal = asn1.ObjectIdentifier{1, 3, 2, 4}
 	oidSignatureRainbowIIICompressed     = asn1.ObjectIdentifier{1, 3, 2, 5}
@@ -523,9 +499,6 @@ var signatureAlgorithmDetails = []struct {
 	{PureDilithium3AES, "Dilithium3AES", oidSignatureDilithium3AES, Dilithium3AES, crypto.Hash(0)},
 	{PureDilithium5AES, "Dilithium5AES", oidSignatureDilithium5AES, Dilithium5AES, crypto.Hash(0)},
 
-	{PureRainbowIClassic, "RainbowIClassic", oidSignatureRainbowIClassic, RainbowIClassic, crypto.Hash(0)},
-	{PureRainbowICircumzenithal, "RainbowICircumzenithal", oidSignatureRainbowICircumzenithal, RainbowICircumzenithal, crypto.Hash(0)},
-	{PureRainbowICompressed, "RainbowICompressed", oidSignatureRainbowICompressed, RainbowICompressed, crypto.Hash(0)},
 	{PureRainbowIIIClassic, "RainbowIIIClassic", oidSignatureRainbowIIIClassic, RainbowIIIClassic, crypto.Hash(0)},
 	{PureRainbowIIICircumzenithal, "RainbowIIICircumzenithal", oidSignatureRainbowIIICircumzenithal, RainbowIIICircumzenithal, crypto.Hash(0)},
 	{PureRainbowIIICompressed, "RainbowIIICompressed", oidSignatureRainbowIIICompressed, RainbowIIICompressed, crypto.Hash(0)},
@@ -678,9 +651,6 @@ var (
 	oidPublicKeyDilithium3AES = oidSignatureDilithium3AES
 	oidPublicKeyDilithium5AES = oidSignatureDilithium5AES
 
-	oidPublicKeyRainbowIClassic          = oidSignatureRainbowIClassic
-	oidPublicKeyRainbowICircumzenithal   = oidSignatureRainbowICircumzenithal
-	oidPublicKeyRainbowICompressed       = oidSignatureRainbowICompressed
 	oidPublicKeyRainbowIIIClassic        = oidSignatureRainbowIIIClassic
 	oidPublicKeyRainbowIIICircumzenithal = oidSignatureRainbowIIICircumzenithal
 	oidPublicKeyRainbowIIICompressed     = oidSignatureRainbowIIICompressed
@@ -718,12 +688,6 @@ func getPublicKeyAlgorithmFromOID(oid asn1.ObjectIdentifier) PublicKeyAlgorithm 
 		return Dilithium3AES
 	case oid.Equal(oidPublicKeyDilithium5AES):
 		return Dilithium5AES
-	case oid.Equal(oidPublicKeyRainbowIClassic):
-		return RainbowIClassic
-	case oid.Equal(oidPublicKeyRainbowICircumzenithal):
-		return RainbowICircumzenithal
-	case oid.Equal(oidPublicKeyRainbowICompressed):
-		return RainbowICompressed
 	case oid.Equal(oidPublicKeyRainbowIIIClassic):
 		return RainbowIIIClassic
 	case oid.Equal(oidPublicKeyRainbowIIICircumzenithal):
@@ -1096,7 +1060,7 @@ func checkSignature(algo SignatureAlgorithm, signed, signature []byte, publicKey
 	switch hashType {
 	case crypto.Hash(0):
 		//fmt.Println("checkSignature crypto.Hash(0)处的逻辑:")
-		if pubKeyAlgo != Ed25519 && pubKeyAlgo != Falcon512 && pubKeyAlgo != Falcon1024 && pubKeyAlgo != Dilithium2 && pubKeyAlgo != Dilithium3 && pubKeyAlgo != Dilithium5 && pubKeyAlgo != Dilithium2AES && pubKeyAlgo != Dilithium3AES && pubKeyAlgo != Dilithium5AES && pubKeyAlgo != RainbowIClassic && pubKeyAlgo != RainbowICircumzenithal && pubKeyAlgo != RainbowICompressed && pubKeyAlgo != RainbowIIIClassic && pubKeyAlgo != RainbowIIICircumzenithal && pubKeyAlgo != RainbowIIICompressed && pubKeyAlgo != RainbowVClassic && pubKeyAlgo != RainbowVCircumzenithal && pubKeyAlgo != RainbowVCompressed {
+		if pubKeyAlgo != Ed25519 && pubKeyAlgo != Falcon512 && pubKeyAlgo != Falcon1024 && pubKeyAlgo != Dilithium2 && pubKeyAlgo != Dilithium3 && pubKeyAlgo != Dilithium5 && pubKeyAlgo != Dilithium2AES && pubKeyAlgo != Dilithium3AES && pubKeyAlgo != Dilithium5AES && pubKeyAlgo != RainbowIIIClassic && pubKeyAlgo != RainbowIIICircumzenithal && pubKeyAlgo != RainbowIIICompressed && pubKeyAlgo != RainbowVClassic && pubKeyAlgo != RainbowVCircumzenithal && pubKeyAlgo != RainbowVCompressed {
 			return ErrUnsupportedAlgorithm
 		}
 
@@ -1238,30 +1202,6 @@ func checkSignature(algo SignatureAlgorithm, signed, signature []byte, publicKey
 		}
 		return
 
-	case *rainbowIClassic.PublicKey:
-		if pubKeyAlgo != RainbowIClassic {
-			return signaturePublicKeyAlgoMismatchError(pubKeyAlgo, pub)
-		}
-		if !rainbowIClassic.Verify(pub, signed, signature) {
-			return errors.New("x509: pqc verification failure, rainbowIClassic")
-		}
-		return
-	case *rainbowICircumzenithal.PublicKey:
-		if pubKeyAlgo != RainbowICircumzenithal {
-			return signaturePublicKeyAlgoMismatchError(pubKeyAlgo, pub)
-		}
-		if !rainbowICircumzenithal.Verify(pub, signed, signature) {
-			return errors.New("x509: pqc verification failure, rainbowICircumzenithal")
-		}
-		return
-	case *rainbowICompressed.PublicKey:
-		if pubKeyAlgo != RainbowICompressed {
-			return signaturePublicKeyAlgoMismatchError(pubKeyAlgo, pub)
-		}
-		if !rainbowICompressed.Verify(pub, signed, signature) {
-			return errors.New("x509: pqc verification failure, rainbowICompressed")
-		}
-		return
 	case *rainbowIIIClassic.PublicKey:
 		if pubKeyAlgo != RainbowIIIClassic {
 			return signaturePublicKeyAlgoMismatchError(pubKeyAlgo, pub)
@@ -1527,27 +1467,6 @@ func parsePublicKey(algo PublicKeyAlgorithm, keyData *publicKeyInfo) (interface{
 		copy(pub, asn1Data)
 		return &dilithium5AES.PublicKey{Pk: pub}, nil
 
-	case RainbowIClassic:
-		if len(asn1Data) != rainbowIClassic.PublicKeySize {
-			return nil, errors.New("x509: wrong rainbowIClassic public key size")
-		}
-		pub := make([]byte, rainbowIClassic.PublicKeySize)
-		copy(pub, asn1Data)
-		return &rainbowIClassic.PublicKey{Pk: pub}, nil
-	case RainbowICircumzenithal:
-		if len(asn1Data) != rainbowICircumzenithal.PublicKeySize {
-			return nil, errors.New("x509: wrong rainbowICircumzenithal public key size")
-		}
-		pub := make([]byte, rainbowICircumzenithal.PublicKeySize)
-		copy(pub, asn1Data)
-		return &rainbowICircumzenithal.PublicKey{Pk: pub}, nil
-	case RainbowICompressed:
-		if len(asn1Data) != rainbowICompressed.PublicKeySize {
-			return nil, errors.New("x509: wrong rainbowICompressed public key size")
-		}
-		pub := make([]byte, rainbowICompressed.PublicKeySize)
-		copy(pub, asn1Data)
-		return &rainbowICompressed.PublicKey{Pk: pub}, nil
 	case RainbowIIIClassic:
 		if len(asn1Data) != rainbowIIIClassic.PublicKeySize {
 			return nil, errors.New("x509: wrong rainbowIIIClassic public key size")
@@ -2544,15 +2463,6 @@ func signingParamsForPublicKey(pub interface{}, requestedSigAlgo SignatureAlgori
 		pubType = Dilithium5AES
 		sigAlgo.Algorithm = oidSignatureDilithium5AES
 
-	case *rainbowIClassic.PublicKey:
-		pubType = RainbowIClassic
-		sigAlgo.Algorithm = oidSignatureRainbowIClassic
-	case *rainbowICircumzenithal.PublicKey:
-		pubType = RainbowICircumzenithal
-		sigAlgo.Algorithm = oidSignatureRainbowICircumzenithal
-	case *rainbowICompressed.PublicKey:
-		pubType = RainbowICompressed
-		sigAlgo.Algorithm = oidSignatureRainbowICompressed
 	case *rainbowIIIClassic.PublicKey:
 		pubType = RainbowIIIClassic
 		sigAlgo.Algorithm = oidSignatureRainbowIIIClassic
@@ -2594,7 +2504,7 @@ func signingParamsForPublicKey(pub interface{}, requestedSigAlgo SignatureAlgori
 			}
 			sigAlgo.Algorithm, hashFunc = details.oid, details.hash
 
-			if hashFunc == 0 && pubType != Ed25519 && pubType != Falcon512 && pubType != Falcon1024 && pubType != Dilithium2 && pubType != Dilithium3 && pubType != Dilithium5 && pubType != Dilithium2AES && pubType != Dilithium3AES && pubType != Dilithium5AES && pubType != RainbowIClassic && pubType != RainbowICircumzenithal && pubType != RainbowICompressed && pubType != RainbowIIIClassic && pubType != RainbowIIICircumzenithal && pubType != RainbowIIICompressed && pubType != RainbowVClassic && pubType != RainbowVCircumzenithal && pubType != RainbowVCompressed {
+			if hashFunc == 0 && pubType != Ed25519 && pubType != Falcon512 && pubType != Falcon1024 && pubType != Dilithium2 && pubType != Dilithium3 && pubType != Dilithium5 && pubType != Dilithium2AES && pubType != Dilithium3AES && pubType != Dilithium5AES && pubType != RainbowIIIClassic && pubType != RainbowIIICircumzenithal && pubType != RainbowIIICompressed && pubType != RainbowVClassic && pubType != RainbowVCircumzenithal && pubType != RainbowVCompressed {
 				err = errors.New("x509: cannot sign with hash function requested")
 				return
 			}
