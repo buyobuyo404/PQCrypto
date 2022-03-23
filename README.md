@@ -1,7 +1,7 @@
 # PQCrypto-README
 ## 1 PQCrypto: Integrating Post Quantum Cryptography into Golang
 
-**PQCrypto** is a cryptography project conducted by Chongqing University, China, which considers crypto agility and integrates [go 1.17.6 crypto](https://github.com/golang/go/tree/master/src/crypto)[^1], [Open Quantum Safe (OQS) liboqs/liboqs-go 0.7.1](https://openquantumsafe.org/)[^2] and [tjfoc gmsm-1.4.1](https://github.com/tjfoc/gmsm)[^3]. This project aims to study the migration and application adaptation of post quantum cryptography (PQC) algorithms and Chinese national commercial cryptography algorithms (sm-series).
+**PQCrypto** is a cryptography project conducted by Chongqing University, China, which considers crypto agility and integrates [go 1.17.6 crypto](https://github.com/golang/go/tree/master/src/crypto)[^1](a fork of it), [Open Quantum Safe (OQS) liboqs/liboqs-go 0.7.1](https://openquantumsafe.org/)[^2] and [tjfoc gmsm-1.4.1](https://github.com/tjfoc/gmsm)[^3]. This project aims to study the migration and application adaptation of post quantum cryptography (PQC) algorithms and Chinese national commercial cryptography algorithms (sm-series).
 
 We have integrated NIST Post-Quantum Cryptography Standardization round 3 digital signature finalists though OQS liboqs/liboqs-go, including:
 
@@ -18,6 +18,11 @@ And Chinese national commercial cryptography algorithms by tjfoc gmsm:
 - SM4
 
 Among the above algorithms, the post quantum signature algorithms not only support key generation, signature and verification, but also supports all operations in X509.go and private key format conversion in PKCS8.go. You can follow the instructions on crypto in go 1.17.6 to use them. The interfaces of PQCrypto methods are unchanged compared with go 1.17.6. Currently, the Chinese national commercial cryptography algorithms only supports simple key generation, encryption, decryption, signature, verification, and digest computation.
+
+Now we add pqc to go 1.17.6 crypto:
+- x509
+- tls
+- ocsp
 
 ## 2 Usage
 
