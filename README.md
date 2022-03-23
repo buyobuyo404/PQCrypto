@@ -17,14 +17,14 @@ And Chinese national commercial cryptography algorithms by tjfoc gmsm:
 - SM3
 - SM4
 
-Among the above algorithms, the post quantum signature algorithms not only support key generation, signature and verification, but also supports all operations in X509.go and private key format conversion in PKCS8.go. You can follow the instructions on crypto in go 1.14.10 to use them. The interfaces of PQCrypto methods are unchanged compared with go 1.14.10. Currently, the Chinese national commercial cryptography algorithms only supports simple key generation, encryption, decryption, signature, verification, and digest computation.
+Among the above algorithms, the post quantum signature algorithms not only support key generation, signature and verification, but also supports all operations in X509.go and private key format conversion in PKCS8.go. You can follow the instructions on crypto in go 1.17.6 to use them. The interfaces of PQCrypto methods are unchanged compared with go 1.17.6. Currently, the Chinese national commercial cryptography algorithms only supports simple key generation, encryption, decryption, signature, verification, and digest computation.
 
 ## 2 Usage
 
 ### 2.1 Environment Variable
 
 1. OS: ubuntu 18.04 +.
-2. GoLang: Please make sure you have installed go 1.14.10 and/or above.
+2. GoLang: Please make sure you have installed go 1.17.6 and/or above.
 3. liboqs and liboqs-go: Please follow the project instructions of [liboqs](https://github.com/open-quantum-safe/liboqs) and [liboqs-go](https://github.com/open-quantum-safe/liboqs-go)  and configure the corresponding environment variable, both of them must be configured correctly.
 
 ### 2.2 Clone the Project
