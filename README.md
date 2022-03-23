@@ -34,7 +34,7 @@ Among the above algorithms, the post quantum signature algorithms not only suppo
 git clone https://github.com/buyobuyo404/PQCrypto.git
 ```
 
-Then put PQCrypto into `$gopath/github.com/mercury` folder.
+Then delete `crypto` folder, put `PQCrypto` into `$GOROOT/src/` folder, and rename `PQCrypto` to `crypto`.
 
 ### 2.3 Note
 
@@ -42,23 +42,22 @@ Then put PQCrypto into `$gopath/github.com/mercury` folder.
 
 ```go
 import (
-	falcon1024 "github.com/mercury/mercuryPQCrypto/pqc/falcon/falcon1024"
-	falcon512 "github.com/mercury/mercuryPQCrypto/pqc/falcon/falcon512"
+	"crypto/pqc/falcon/falcon512"
+	falcon1024 "crypto/pqc/falcon/falcon1024"
+	
+	"crypto/pqc/dilithium/dilithium2"
+	dilithium2AES "crypto/pqc/dilithium/dilithium2AES"
+	dilithium3 "crypto/pqc/dilithium/dilithium3"
+	dilithium3AES "crypto/pqc/dilithium/dilithium3AES"
+	dilithium5 "crypto/pqc/dilithium/dilithium5"
+	dilithium5AES "crypto/pqc/dilithium/dilithium5AES"
 
-	dilithium2 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium2"
-	dilithium2AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium2AES"
-	dilithium3 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium3"
-	dilithium3AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium3AES"
-	dilithium5 "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium5"
-	dilithium5AES "github.com/mercury/mercuryPQCrypto/pqc/dilithium/dilithium5AES"
-
-	rainbowIIICircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICircumzenithal"
-	rainbowIIIClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIIClassic"
-	rainbowIIICompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowIIICompressed"
-	rainbowVCircumzenithal "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVCircumzenithal"
-	rainbowVClassic "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVClassic"
-	rainbowVCompressed "github.com/mercury/mercuryPQCrypto/pqc/rainbow/rainbowVCompressed"
-)
+	rainbowIIICircumzenithal "crypto/pqc/rainbow/rainbowIIICircumzenithal"
+	rainbowIIIClassic "crypto/pqc/rainbow/rainbowIIIClassic"
+	rainbowIIICompressed "crypto/pqc/rainbow/rainbowIIICompressed"
+	rainbowVCircumzenithal "crypto/pqc/rainbow/rainbowVCircumzenithal"
+	rainbowVClassic "crypto/pqc/rainbow/rainbowVClassic"
+	rainbowVCompressed "crypto/pqc/rainbow/rainbowVCompressed"
 ```
 
 ## 3 Future Work
