@@ -1,8 +1,8 @@
-# mercuryPQCrypto-README
+# PQCrypto-README
 
-## 1 mercuryPQCrypto: Mercury Cryptography Project
+## 1 PQCrypto: Integrating Post Quantum Cryptography into Golang
 
-**mercuryPQCrypto** is a cryptography project conducted by Chongqing University, China, which considers crypto agility and integrates [go 1.14.10 crypto](https://github.com/golang/go/tree/master/src/crypto)[^1], [Open Quantum Safe (OQS) liboqs/liboqs-go 0.7.1](https://openquantumsafe.org/)[^2] and [tjfoc gmsm-1.4.1](https://github.com/tjfoc/gmsm)[^3]. This project aims to study the migration and application adaptation of post quantum cryptography (PQC) algorithms and Chinese national commercial cryptography algorithms (sm-series).
+**PQCrypto** is a cryptography project conducted by Chongqing University, China, which considers crypto agility and integrates [go 1.14.10 crypto](https://github.com/golang/go/tree/master/src/crypto)[^1], [Open Quantum Safe (OQS) liboqs/liboqs-go 0.7.1](https://openquantumsafe.org/)[^2] and [tjfoc gmsm-1.4.1](https://github.com/tjfoc/gmsm)[^3]. This project aims to study the migration and application adaptation of post quantum cryptography (PQC) algorithms and Chinese national commercial cryptography algorithms (sm-series).
 
 We have integrated NIST Post-Quantum Cryptography Standardization round 3 digital signature finalists though OQS liboqs/liboqs-go, including:
 
@@ -18,7 +18,7 @@ And Chinese national commercial cryptography algorithms by tjfoc gmsm:
 - SM3
 - SM4
 
-Among the above algorithms, the post quantum signature algorithms not only support key generation, signature and verification, but also supports all operations in X509.go and private key format conversion in PKCS8.go. You can follow the instructions on crypto in go 1.14.10 to use them. The interfaces of mercuryPQCrypto methods are unchanged compared with go 1.14.10. Currently, the Chinese national commercial cryptography algorithms only supports simple key generation, encryption, decryption, signature, verification, and digest computation.
+Among the above algorithms, the post quantum signature algorithms not only support key generation, signature and verification, but also supports all operations in X509.go and private key format conversion in PKCS8.go. You can follow the instructions on crypto in go 1.14.10 to use them. The interfaces of PQCrypto methods are unchanged compared with go 1.14.10. Currently, the Chinese national commercial cryptography algorithms only supports simple key generation, encryption, decryption, signature, verification, and digest computation.
 
 ## 2 Instructions
 
@@ -31,10 +31,10 @@ Among the above algorithms, the post quantum signature algorithms not only suppo
 ### 2.2 Clone the Project
 
 ```
-git clone https://github.com/buyobuyo404/mercuryPQCrypto.git
+git clone https://github.com/buyobuyo404/PQCrypto.git
 ```
 
-Then put mercuryPQCrypto into `$gopath/github.com/mercury` folder.
+Then put PQCrypto into `$gopath/github.com/mercury` folder.
 
 ### 2.3 Note
 
