@@ -19,7 +19,7 @@ And Chinese national commercial cryptography algorithms by tjfoc gmsm:
 
 Among the above algorithms, the post quantum signature algorithms not only support key generation, signature and verification, but also supports all operations in X509.go and private key format conversion in PKCS8.go. You can follow the instructions on crypto in go 1.14.10 to use them. The interfaces of PQCrypto methods are unchanged compared with go 1.14.10. Currently, the Chinese national commercial cryptography algorithms only supports simple key generation, encryption, decryption, signature, verification, and digest computation.
 
-## 2 Instructions
+## 2 Usage
 
 ### 2.1 Environment Variable
 
