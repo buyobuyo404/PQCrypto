@@ -1,4 +1,4 @@
-package dilithium2
+package dilithium5
 
 import (
 	"crypto"
@@ -49,7 +49,7 @@ func GenerateKey() (*PrivateKey, error) {
 	return privateKey, err
 }
 
-//func (priv *PrivateKey) Sign(random io.Reader, msg []byte, signer crypto.SignerOpts) ([]byte, error)
+// func (priv *PrivateKey) Sign(random io.Reader, msg []byte, signer crypto.SignerOpts) ([]byte, error)
 func (priv *PrivateKey) SignPQC(msg []byte) (sig []byte, err error) {
 	// fmt.Println("----PQC签名开始: ", sigName)
 
@@ -74,7 +74,7 @@ func (priv *PrivateKey) Public() crypto.PublicKey {
 	return &priv.PublicKey
 }
 
-//func (pub *PublicKey) Verify(msg []byte, sig []byte) bool
+// func (pub *PublicKey) Verify(msg []byte, sig []byte) bool
 func (pub *PublicKey) Verify(msg []byte, signature []byte) bool {
 	return Verify(pub, msg, signature)
 }
